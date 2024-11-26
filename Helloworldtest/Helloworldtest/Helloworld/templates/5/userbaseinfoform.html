@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>用户基本信息表单</title>
+</head>
+<body>
+    <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        
+        <p>
+            {{ form_obj.username.label }}: {{ form_obj.username }}
+            {{ errors.username.0 }}
+        </p>
+        
+        <p>
+            {{ form_obj.password.label }}: {{ form_obj.password }}
+            {{ errors.password.0 }}
+        </p>
+        
+        <p>
+            {{ form_obj.confirm_password.label }}: {{ form_obj.confirm_password }}
+            {{ errors.confirm_password.0 }}
+        </p>
+        
+        <p>
+            {{ form_obj.status.label }}: {{ form_obj.status }}
+            {{ errors.status.0 }}
+        </p>
+        
+        <p>
+            {{ form_obj.age.label }}: {{ form_obj.age }}
+            {{ errors.age.0 }}
+        </p>
+        
+        <p>
+            {{ form_obj.mobile.label }}: {{ form_obj.mobile }}
+            {{ errors.mobile.0 }}
+        </p>
+        
+        <p>
+            错误信息汇总在一起显示: {{ errors }}
+        </p>
+        
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

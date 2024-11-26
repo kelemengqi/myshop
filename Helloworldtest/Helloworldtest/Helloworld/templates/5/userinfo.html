@@ -1,0 +1,25 @@
+<html>
+<body>
+    <h2>上传文件</h2>
+    <form action="/app5/upload_file/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" required>
+        <input type="submit" value="上传">
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户信息表单</title>
+</head>
+<body>
+    <h2>用户信息表单</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

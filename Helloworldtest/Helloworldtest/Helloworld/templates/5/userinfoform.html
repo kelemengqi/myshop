@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户信息表单</title>
+</head>
+<body>
+    <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        
+        <p>
+            {{ form_obj.username.label }}: {{ form_obj.username }}
+            {% if form_obj.errors.username %}
+                <span style="color: red;">{{ form_obj.errors.username.0 }}</span>
+            {% endif %}
+        </p>
+
+        <p>
+            {{ form_obj.password.label }}: {{ form_obj.password }}
+            {% if form_obj.errors.password %}
+                <span style="color: red;">{{ form_obj.errors.password.0 }}</span>
+            {% endif %}
+        </p>
+
+        <p>
+            {{ form_obj.status.label }}: {{ form_obj.status }}
+            {% if form_obj.errors.status %}
+                <span style="color: red;">{{ form_obj.errors.status.0 }}</span>
+            {% endif %}
+        </p>
+
+        <p>
+            {{ form_obj.age.label }}: {{ form_obj.age }}
+            {% if form_obj.errors.age %}
+                <span style="color: red;">{{ form_obj.errors.age.0 }}</span>
+            {% endif %}
+        </p>
+
+        <p>
+            {{ form_obj.mobile.label }}: {{ form_obj.mobile }}
+            {% if form_obj.errors.mobile %}
+                <span style="color: red;">{{ form_obj.errors.mobile.0 }}</span>
+            {% endif %}
+        </p>
+
+        <p>
+            错误信息汇总在一起显示:
+            {% if errors %}
+                <span style="color: red;">{{ errors }}</span>
+            {% endif %}
+        </p>
+
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
